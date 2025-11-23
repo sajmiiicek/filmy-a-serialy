@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieTracker 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="logo">
+                <span class="logo-icon">🎬</span>
+                MovieTracker
+                <span class="logo-year">2025</span>
+            </h1>
+            <p class="subtitle">Moje osobní filmová databáze</p>
+        </header>
+
+        <!-- Add Item Form -->
+        <div class="form-container">
+            <h2 class="section-title">Přidat novou položku</h2>
+            <form id="addForm" class="add-form">
+                <div class="form-group">
+                    <label for="title">Název</label>
+                    <input type="text" id="title" placeholder="Např. Inception" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="platform">Kde jsem to viděl</label>
+                    <input type="text" id="platform" placeholder="Např. Netflix, HBO, Kino..." required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="year">Rok vydání</label>
+                        <input type="number" id="year" placeholder="2024" min="1900" max="2100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rating">Hodnocení</label>
+                        <select id="rating" required>
+                            <option value="">--</option>
+                            <option value="10">10 ⭐</option>
+                            <option value="9">9 ⭐</option>
+                            <option value="8">8 ⭐</option>
+                            <option value="7">7 ⭐</option>
+                            <option value="6">6 ⭐</option>
+                            <option value="5">5 ⭐</option>
+                            <option value="4">4 ⭐</option>
+                            <option value="3">3 ⭐</option>
+                            <option value="2">2 ⭐</option>
+                            <option value="1">1 ⭐</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Typ</label>
+                    <div class="type-toggle">
+                        <input type="radio" id="typeMovie" name="type" value="Film" checked>
+                        <label for="typeMovie" class="type-option">🎥 Film</label>
+                        
+                        <input type="radio" id="typeSeries" name="type" value="Seriál">
+                        <label for="typeSeries" class="type-option">📺 Seriál</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-add">
+                    <span class="btn-text">Přidat položku</span>
+                    <span class="btn-glow"></span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Items List -->
+        <div class="list-container">
+            <h2 class="section-title">
+                Moje kolekce
+                <span class="item-count" id="itemCount">0</span>
+            </h2>
+            <div id="itemsList" class="items-list">
+                <!-- Items will be rendered here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
